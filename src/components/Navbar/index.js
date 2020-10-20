@@ -9,9 +9,7 @@ import {
     MobileIcon, 
     NavMenu, 
     NavItem, 
-    NavLinks, 
-    NavBtn, 
-    NavBtnLink
+    NavLinks
 } from './NavbarElements';
 
 const Navbar = ({toggle}) => {
@@ -53,45 +51,42 @@ const Navbar = ({toggle}) => {
                                 exact ='true' 
                                 offset={-80}
                                 // activeClass="active"
-                                >About</NavLinks>
+                                >About me</NavLinks>
                             </NavItem>
                             <NavItem>
                                 <NavLinks 
-                                to='discover'
+                                to='skills'
                                 smooth={true} 
                                 duration={500} 
                                 spy={true} 
                                 exact ='true' 
                                 offset={-80}
                                 // activeClass="active"
-                                >Discover</NavLinks>
+                                >Skills</NavLinks>
                             </NavItem>
                             <NavItem>
                                 <NavLinks 
-                                to='services'
+                                to='projects'
                                 smooth={true} 
                                 duration={500} 
                                 spy={true} 
                                 exact ='true' 
                                 offset={-80}
                                 // activeClass="active"
-                                >Services</NavLinks>
+                                >Projects</NavLinks>
                             </NavItem>
                             <NavItem>
                                 <NavLinks 
-                                to='signup'
+                                to='contacts'
                                 smooth={true} 
                                 duration={500} 
                                 spy={true} 
                                 exact ='true' 
                                 offset={-80}
                                 // activeClass="active"
-                                >Sign Up</NavLinks>
+                                >Contacts</NavLinks>
                             </NavItem>
                         </NavMenu>
-                        <NavBtn>
-                            <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-                        </NavBtn>
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>

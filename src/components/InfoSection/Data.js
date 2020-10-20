@@ -14,37 +14,3 @@ export const homeObjOne = {
     primary: true,
     darkText: false,
 };
-
-export const homeObjTwo = {
-    id: 'discover',
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
-    topLine: 'Premium Bank',
-    headline: 'Unlimited Transacrions with zero fees',
-    description: 'Get access to our exlusive app that allows you to send unlimited transactions without get any charged any fees',
-    buttonLabel: 'Get started',
-    imgStart: true,
-    img: require('../../images/svg-4.svg'),
-    alt: 'Piggybank',
-    dark: false,
-    primary: false,
-    darkText: true,
-};
-
-export const homeObjThree = {
-    id: 'signup',
-    lightBg: true,
-    lightText: false,
-    lightTextDesc: false,
-    topLine: 'Premium Bank',
-    headline: 'Unlimited Transacrions with zero fees',
-    description: 'Get access to our exlusive app that allows you to send unlimited transactions without get any charged any fees',
-    buttonLabel: 'Start Now',
-    imgStart: false,
-    img: require('../../images/svg-2.svg'),
-    alt: 'Papers',
-    dark: false,
-    primary: false,
-    darkText: true,
-};

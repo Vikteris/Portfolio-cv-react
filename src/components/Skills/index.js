@@ -42,7 +42,7 @@ const Skills = () => {
                 <SkillsCard>
                     <SkillsIcon src={java} />
                     <SkillsH2>JAVA</SkillsH2>
-                    <SkillsP>1 months basic experience.OOP knowledge</SkillsP>
+                    <SkillsP>1 month basic experience.OOP knowledge</SkillsP>
                 </SkillsCard>
                 <SkillsCard>
                     <SkillsIcon 

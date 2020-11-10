@@ -1,47 +1,102 @@
-import React from 'react';
-import emailjs from 'emailjs-com';
+import React, { useState } from "react";
+import { db } from "../firebase";
 import {
-ContactContainer,
-ContactH1,
-ContactWrapper,
-ContactRow,
-Column1,
-Column2
-} from './ContactsElements';
-
+    Form,
+    H1,
+    Label,
+    Input,
+    Textarea,
+    Button,
+    ContactContainer,
+    ContactH1,
+    ContactWrapper,
+    ContactRow,
+    Column1,
+    Column2,
+    Contacts,
+    Conta,
+} from "./ContactsElements";
 
 const ContactSection = () => {
 
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [subject, setSubject] = useState("");
+const [message, setMessage] = useState("");
 
-    function sendEmail(e) {
-        e.preventDefault();
-    
-        emailjs.sendForm('gmail', 'template_s7jdh6f', e.target, 'user_qgmCZx45HyTAJSRhZ1m0o')
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
+const [loader, setLoader] = useState(false);
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoader(true);
+
+    db.collection("contacts")
+    .add({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        })
+    .then(() => {
+        setLoader(false);
+        alert("Your message has been send");
+        setLoader(false);
+        })
+    .catch((error) => {
+        alert(error.message);
+        setLoader(false);
         });
-        e.target.reset()
+
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
     };
 
     return (
         <>
             <ContactContainer id='contacts'>
-                <ContactH1>Contact</ContactH1>
+                <ContactH1>Contacts</ContactH1>
                 <ContactWrapper>
                     <ContactRow>
                         <Column1>
-                        <h1>Labassdfsdf</h1> 
+                            <Contacts>
+                                <Conta><span role="img">▶ Phone number: + 370 60483791</span></Conta>
+                                <Conta><span role="img">▶ Email: vikteris@gmail.com</span></Conta>
+                            </Contacts> 
                         </Column1>
                         <Column2>
-                            <form onSubmit={sendEmail}>
-                                <input type="text" placeholder="Name" name="name"/>
-                                <input type="email" placeholder="Email Address" name="email"/>
-                                <input type="text" placeholder="Subject" name="subject"/>
-                                <textarea  placeholder="Your message" name="message"></textarea>
-                                <input type="submit" value="Send Message"></input>
-                            </form>
+                            <Form onSubmit={handleSubmit}>
+                                <H1><span role="img" aria-label="selfie">Contact Me 🤳</span></H1>
+                                <Label>Name</Label>
+                                <Input
+                                    placeholder="Name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                                <Label>Email</Label>
+                                <Input
+                                    placeholder="Email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <Label>Subject</Label>
+                                <Input
+                                    placeholder="Subject"
+                                    onChange={(e) => setSubject(e.target.value)}
+                                />
+                                <Label>Message</Label>
+                                <Textarea
+                                    placeholder="Message"
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                ></Textarea>
+                                <Button
+                                    type="submit"
+                                    style={{ background: loader ? "#ccc" : "#01bf71" }}
+                                    >Send
+                                </Button>
+                            </Form>
                         </Column2>
                     </ContactRow> 
                 </ContactWrapper>
@@ -51,3 +106,6 @@ const ContactSection = () => {
 }
 
 export default ContactSection
+
+
+

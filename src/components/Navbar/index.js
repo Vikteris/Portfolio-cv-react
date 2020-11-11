@@ -50,7 +50,7 @@ const Navbar = ({toggle}) => {
                                 spy={true} 
                                 exact ='true' 
                                 offset={-80}
-                                // activeClass="active"
+                                activeClass="active"
                                 >About me</NavLinks>
                             </NavItem>
                             <NavItem>
@@ -61,7 +61,7 @@ const Navbar = ({toggle}) => {
                                 spy={true} 
                                 exact ='true' 
                                 offset={-80}
-                                // activeClass="active"
+                                activeClass="active"
                                 >Skills</NavLinks>
                             </NavItem>
                             {/* <NavItem>
@@ -83,7 +83,7 @@ const Navbar = ({toggle}) => {
                                 spy={true} 
                                 exact ='true' 
                                 offset={-80}
-                                // activeClass="active"
+                                activeClass="active"
                                 >Contacts</NavLinks>
                             </NavItem>
                         </NavMenu>

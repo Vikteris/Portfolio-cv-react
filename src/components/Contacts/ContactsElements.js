@@ -78,11 +78,12 @@ export const ContactContainer = styled.div`
 
     @media screen and (max-width: 768px){
         padding: 40px 0;
+        height: 1200px;
     };
 
     @media screen and (max-width: 420px){
         height: 1100px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     };
     
 `;
@@ -102,7 +103,7 @@ export const ContactH1 = styled.h1`
 export const ContactWrapper = styled.div`
     display: grid;
     z-index: 1;
-    height: auto;
+    height: 900px;
     width: 100%;
     max-width: 1100px;
     margin-right: auto;
@@ -119,19 +120,17 @@ export const ContactRow = styled.div`
 
     @media screen and (max-width: 768px){
         grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};
-        height: 1000px;
+        height: 900px;
     };
 
     @media screen and (max-width: 640px){
-        height:1000px;
-    };
-    @media screen and (max-width: 540px){
         height:1100px;
     };
+    
 
-    @media screen and (max-width: 460px){
-        height:1200px;
-    };
+    /* @media screen and (max-width: 460px){
+        height:1600px;
+    }; */
 `;
 
 export const Column1 = styled.div`
@@ -141,7 +140,6 @@ export const Column1 = styled.div`
     grid-area: col1;
 
     @media screen and (max-width: 460px){
-        padding: 20px 0;
         margin-bottom: 3px;
     };
 `;
@@ -152,7 +150,7 @@ export const Column2 = styled.div`
 
 export const Contacts= styled.div`
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

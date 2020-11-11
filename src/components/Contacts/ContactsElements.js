@@ -119,6 +119,7 @@ export const ContactRow = styled.div`
 
     @media screen and (max-width: 768px){
         grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};
+        height: 800px;
     };
 
     @media screen and (max-width: 640px){

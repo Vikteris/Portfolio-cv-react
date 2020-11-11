@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
     width: 100%;
-    /* height: 80vh; */
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center; 
@@ -119,7 +119,6 @@ export const ContactRow = styled.div`
 
     @media screen and (max-width: 768px){
         grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};
-        height: 800px;
     };
 
     @media screen and (max-width: 640px){

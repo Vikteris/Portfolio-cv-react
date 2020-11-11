@@ -64,7 +64,7 @@ const Navbar = ({toggle}) => {
                                 // activeClass="active"
                                 >Skills</NavLinks>
                             </NavItem>
-                            {/* <NavItem>
+                            <NavItem>
                                 <NavLinks 
                                 to='projects'
                                 smooth={true} 
@@ -74,7 +74,7 @@ const Navbar = ({toggle}) => {
                                 offset={-80}
                                 // activeClass="active"
                                 >Projects</NavLinks>
-                            </NavItem> */}
+                            </NavItem>
                             <NavItem>
                                 <NavLinks 
                                 to='contacts'

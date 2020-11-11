@@ -45,13 +45,26 @@ export const Textarea = styled.textarea`
     color: rgb(0, 0, 32);
     outline: none;
 
+    :-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    red;
+    font-size: 15px;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    red;
+        font-size: 15px;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    red;
+        font-size: 15px;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    red;
+        font-size: 15px;
+    }
+
     &:focus{
         border: 1px solid rgb(0, 0, 196);
     };
-
-    @media screen and (max-width: 460px){
-        resize: none;
-    }
 
 `
 
@@ -159,5 +172,24 @@ export const Contacts= styled.div`
 export const Conta = styled.p`
     padding: 20px 0;
     font-size: 20px;
+
+    @media screen and (max-width: 460px){
+        font-size: 17px;
+    };
+    @media screen and (max-width: 385px){
+        font-size: 16px;
+    };
+    @media screen and (max-width: 370px){
+        font-size: 15px;
+    };
+    @media screen and (max-width: 354px){
+        font-size: 14px;
+    };
+    @media screen and (max-width: 338px){
+        font-size: 13px;
+    };
+    @media screen and (max-width: 321px){
+        font-size: 13px;
+    };
 
 ` 

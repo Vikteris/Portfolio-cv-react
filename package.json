@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@octokit/core": "^3.2.1",
+    "@octokit/plugin-request-log": "^1.0.2",
     "@statickit/react": "^2.1.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -19,11 +21,11 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "netlify": "netlify",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "netlify": "netlify"
   },
   "eslintConfig": {
     "extends": "react-app"

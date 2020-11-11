@@ -119,17 +119,18 @@ export const ContactRow = styled.div`
 
     @media screen and (max-width: 768px){
         grid-template-areas: ${({imgStart}) => (imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`)};
+        height: 1000px;
     };
 
     @media screen and (max-width: 640px){
-        height:800px;
+        height:1000px;
     };
     @media screen and (max-width: 540px){
-        height:850px;
+        height:1100px;
     };
 
     @media screen and (max-width: 460px){
-        height:900px;
+        height:1200px;
     };
 `;
 

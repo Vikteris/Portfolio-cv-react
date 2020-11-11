@@ -19,10 +19,12 @@ import {
 
 const ContactSection = () => {
 
+
 const [name, setName] = useState("");
 const [email, setEmail] = useState("");
 const [subject, setSubject] = useState("");
 const [message, setMessage] = useState("");
+
 
 const [loader, setLoader] = useState(false);
 
@@ -39,7 +41,7 @@ const handleSubmit = (e) => {
         })
     .then(() => {
         setLoader(false);
-        alert("Your message has been send");
+        // alert("Your message has been send");
         setLoader(false);
         })
     .catch((error) => {
@@ -51,7 +53,8 @@ const handleSubmit = (e) => {
     setEmail("");
     setSubject("");
     setMessage("");
-    };
+    
+};
 
     return (
         <>

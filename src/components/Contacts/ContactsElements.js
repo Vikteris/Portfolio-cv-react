@@ -173,6 +173,9 @@ export const Conta = styled.p`
     padding: 20px 0;
     font-size: 20px;
 
+    @media screen and (max-width: 830px){
+        font-size: 17px;
+    };
     @media screen and (max-width: 460px){
         font-size: 17px;
     };

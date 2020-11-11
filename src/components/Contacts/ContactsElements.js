@@ -191,8 +191,8 @@ export const Conta = styled.p`
     @media screen and (max-width: 338px){
         font-size: 13px;
     };
-    @media screen and (max-width: 321px){
-        font-size: 13px;
+    @media screen and (max-width: 320px){
+        font-size: 12px;
     };
 
 ` 

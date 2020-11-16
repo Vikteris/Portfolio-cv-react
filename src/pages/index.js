@@ -8,6 +8,7 @@ import Skills from '../components/Skills';
 import Sidebar from '../components/Sidebar';
 import Contacts from '../components/Contacts';
 
+
 const Home = () => {
     
     const [isOpen, setIsOpen] = useState(false)

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../ButtonElements';
 import {
     InfoContainer, 
     InfoWrapper, 
@@ -9,6 +10,7 @@ import {
     TopLine, 
     Heading, 
     Subtitle,
+    BtnWrap,
     ImgWrap,
     Img,
 } from './InfoElements';
@@ -21,10 +23,16 @@ const InfoSection = ({lightBg,
     darkText, 
     headline, 
     description,
+    buttonLabel,
     img, 
     alt,
+    primary,
+    dark,
+    dark2,
+
+    
     }) => {
-        
+
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
@@ -35,6 +43,20 @@ const InfoSection = ({lightBg,
                                 <TopLine>{topLine}</TopLine>
                                 <Heading lightText= {lightText}>{headline}</Heading>
                                 <Subtitle darkText={darkText}>{description}</Subtitle>
+                                <BtnWrap>
+                                <Button
+                                    smooth={true}
+                                    duration={500}
+                                    spy={true}
+                                    exact= "true"
+                                    offset={-80}
+                                    primary={primary ? 1 : 0}
+                                    dark={dark ? 1 : 0}
+                                    dark2={dark2 ? 1 : 0}
+                                    onClick={() => {window.open('./files/resume.pdf', '_blank',); return true;}}
+                                    >{buttonLabel}
+                                    </Button>
+                                </BtnWrap>
                             </TextWrapper>
                         </Column1>
                         <Column2>
@@ -44,7 +66,7 @@ const InfoSection = ({lightBg,
                         </Column2>
                     </InfoRow>
                 </InfoWrapper>     
-            </InfoContainer>   
+            </InfoContainer>
         </>
     )
 }

@@ -7,7 +7,8 @@ import Navbar from '../components/Navbar';
 import Skills from '../components/Skills';
 import Sidebar from '../components/Sidebar';
 import Contacts from '../components/Contacts';
-
+import Projects from '../components/Projects';
+import { Btn } from '../components/Projects/ProjectsElements'
 
 const Home = () => {
     
@@ -27,7 +28,7 @@ const Home = () => {
         <HeroSection />
         <InfoSection {...homeObjOne}/>
         <Skills />
-        {/* <Projects /> */}
+        <Projects {...Btn}/>
         <Contacts />
         <Footer />
         

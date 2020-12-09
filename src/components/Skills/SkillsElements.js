@@ -15,7 +15,7 @@ export const SkillsContainer = styled.div`
     };
 
     @media screen and (max-width: 768px){
-        height: 1680px;
+        height: 1800px;
 
     };
 
@@ -76,7 +76,9 @@ export const SkillsH1= styled.h1`
 
     @media screen and (max-width: 480px){
         font-size: 2rem;
-
+    };
+    @media screen and (max-width: 768px ){
+        margin-top:40px;
     }
 `
 export const SkillsH2= styled.h2`

@@ -178,6 +178,7 @@ export const ItemP= styled.p`
     text-align: justify;
     align-items: center;
     text-align: center;
+    justify-content: center;
     margin-top: 25px;
     color: #000;
     border: none;

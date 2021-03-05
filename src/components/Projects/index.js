@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Carousel from "react-elastic-carousel";
 import book from '../../videos/Book.gif'
+import logo from '../../images/logo.jpg'
 import {
     SkillsContainer,
     SkillsH1,
@@ -40,7 +41,14 @@ const Projects = ({ItemBtn}) => {
                             {ItemBtn}
                         </ItemButton>
                     </Item>
-                    <Item>2</Item>
+                    <Item>
+                        <ItemIcon src={logo} />
+                        <ItemH2>Landscape architecture website with REACTJS</ItemH2>
+                        <ItemP style={{border: "none"}}>Website created with ReactJs for educational purpose and it's fully working.</ItemP>
+                        <ItemButton onClick={() => {window.open('http://landarch.lt', '_blank',); return true;}}>
+                            {ItemBtn}
+                        </ItemButton>
+                    </Item>
 
                 </Carousel>
                 </SkillsWrapper>

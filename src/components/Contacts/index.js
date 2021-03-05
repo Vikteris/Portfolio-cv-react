@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { db } from "../firebase";
+import emailjs from 'emailjs-com';
 import {
     Form,
     H1,
@@ -19,42 +19,19 @@ import {
 
 const ContactSection = () => {
 
-
-const [name, setName] = useState("");
-const [email, setEmail] = useState("");
-const [subject, setSubject] = useState("");
-const [message, setMessage] = useState("");
-
-
 const [loader, setLoader] = useState(false);
 
-const handleSubmit = (e) => {
+function sendEmail(e) {
     e.preventDefault();
-    setLoader(true);
 
-    db.collection("contacts")
-    .add({
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-        })
-    .then(() => {
-        setLoader(false);
-        // alert("Your message has been send");
-        setLoader(false);
-        })
-    .catch((error) => {
-        alert(error.message);
-        setLoader(false);
-        });
-
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
-    
-};
+    emailjs.sendForm('service_ea5g6yd', 'template_bhyurj3', e.target, 'user_qgmCZx45HyTAJSRhZ1m0o')
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+     }, function(error) {
+        console.log('FAILED...', error);
+     });
+      e.target.reset();
+  }
 
     return (
         <>
@@ -69,35 +46,41 @@ const handleSubmit = (e) => {
                             </Contacts> 
                         </Column1>
                         <Column2>
-                            <Form onSubmit={handleSubmit}>
+                            <Form className="contact-form" onSubmit={sendEmail}>
                                 <H1><span role="img" aria-label="selfie">Contact Me 🤳</span></H1>
-                                <Label>Name</Label>
+                                <Label htmlFor="name">Name</Label>
                                 <Input
                                     placeholder="Name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    type="text" 
+                                    id="name" 
+                                    name="name" 
+                                    required
                                 />
-                                <Label>Email</Label>
+                                <Label htmlFor="email">Email</Label>
                                 <Input
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
                                 />
-                                <Label>Subject</Label>
+                                <Label htmlFor="name">Subject</Label>
                                 <Input
-                                    placeholder="Subject"
-                                    onChange={(e) => setSubject(e.target.value)}
+                                    type="text" 
+                                    id="name" 
+                                    name="subject" 
+                                    required
                                 />
-                                <Label>Message</Label>
+                                <Label htmlFor="message">Message</Label>
                                 <Textarea
-                                    placeholder="Message"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
+                                    rows="5" 
+                                    id="message" 
+                                    name="message" 
+                                    required
                                 ></Textarea>
                                 <Button
-                                    type="submit"
-                                    style={{ background: loader ? "#ccc" : "#01bf71" }}
-                                    >Send
+                                    // onClick={notify}
+                                    type="submit">
+                                        Send
                                 </Button>
                             </Form>
                         </Column2>
